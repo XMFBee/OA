@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+
+	<constant name="struts.action.extension" value="action,,do" />
+	<constant name="struts.multipart.maxSize" value="20971520" />
+
+	<package name="my-struts" extends="json-default">
+		<global-results> 
+			<result name="error">/WEB-INF/pagers/error/error.jsp</result> 
+		</global-results> 
+	</package>
+	<!-- 郭昶 -->
+	<include file="../config/struts-meetting.xml"></include>
+	<include file="../config/struts-course.xml"></include>
+	<include file="../config/struts-progress.xml"></include>
+	<include file="../config/struts-empfeedback.xml"></include>
+
+	<include file="../config/struts-student.xml"></include>
+	<include file="../config/struts-aut.xml"></include>
+	<include file="../config/struts-admin.xml"></include>
+	<include file="../config/struts-index.xml"></include>
+	<include file="../config/struts-salaryInfo.xml"></include>
+	<include file="../config/struts-job.xml"></include>
+	<!-- 郭玉清 -->
+	<include file="../config/struts-talk.xml"></include>
+	<include file="../config/struts-system.xml"></include>
+	<include file="../config/struts-officework.xml"></include>
+	
+	<include file="../config/struts-payType.xml"></include>
+	<include file="../config/struts-payinfo.xml"></include>
+	<include file="../config/struts-pay.xml"></include>
+    <include file="../config/struts-index.xml"></include>
+    <include file="../config/struts-job.xml"></include>
+    <!-- 郭玉清 -->
+   	<include file="../config/struts-talk.xml"></include>
+    <include file="../config/struts-system.xml"></include>
+    <include file="../config/struts-officework.xml"></include>
+    <include file="../config/struts-payType.xml"></include>
+    <include file="../config/struts-login.xml"></include>
+    
+    <!-- XMF -->
+    <include file="../config/struts-goods.xml"></include>
+    <include file="../config/struts-goodsType.xml"></include>
+    <include file="../config/struts-goodsApp.xml"></include>
+    
+   	<!-- 赖泰君 -->
+   	<include file="../config/struts-salaryInfo.xml"></include>
+   	<include file="../config/struts-incomeType.xml"></include>
+   	<include file="../config/struts-income.xml"></include>
+   	<include file="../config/struts-salary.xml"></include>
+   	<include file="../config/struts-empsSalary.xml"></include>
+
+	<!-- XMF -->
+	<include file="../config/struts-goods.xml"></include>
+	<include file="../config/struts-goodsType.xml"></include>
+
+</struts>

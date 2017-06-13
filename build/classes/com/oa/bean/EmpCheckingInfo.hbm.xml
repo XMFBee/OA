@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 邱康 -->
+<hibernate-mapping package = "com.oa.bean">
+	<class name="EmpCheckingInfo" table="t_empcheckinginfo"> 
+		<id name="checkingInfoId" column="checkinginfoid"> 
+            <generator class="uuid.hex"/> 
+        </id>
+        <property name="name" column="name"></property>
+		<property name="checkingTime" column="checkingtime"></property>
+    </class>
+</hibernate-mapping>

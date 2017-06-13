@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- 郭玉清 -->
+<struts>
+    
+	<package name="talk-struts" extends="my-struts" namespace="/talk">
+		<action name="*" class="com.oa.action.TalkAction" method="{1}">
+			<result name="pager" type="json"></result>
+			<result name="add" type="json"></result>
+			<result name="update" type="json"></result>
+			<result name="showTalk">/WEB-INF/pagers/student/student_talk.jsp</result>
+			<result name="disable" type="json"></result> 
+            <result name="activate" type = "json"></result>		
+		</action>
+	</package>
+	
+</struts>
+
+
+
+
+
+
+

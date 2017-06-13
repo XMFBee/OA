@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 郭昶 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name="GoodsApp" table="t_goodsapp">
+		<id name="goodsAppId" column="goodsappid">
+			<generator class="uuid.hex"></generator>
+		</id>
+		<property name="appDay" column="appday"></property>
+		<property name="goodsName" column="goodsname"></property>
+		<property name="quantity" column="quantity"></property>
+		<property name="des" column="des"></property>
+		<property name="status" column="status"></property>
+		<property name="appStatus" column="appstatus"></property>
+		
+		<!-- XMF 多个用品申购属于一个员工 N ->> 1 -->
+		<many-to-one name="emp" column="empid" class="com.oa.bean.Employee"
+			fetch="join"  update="false"></many-to-one>
+		
+	</class>
+</hibernate-mapping>

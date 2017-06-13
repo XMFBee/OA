@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 郭昶 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name="GoodsType" table="t_goodstype">
+		<id name="goodsTypeId" column="goodstypeid">
+			<generator class="uuid.hex"></generator>
+		</id>
+		<property name="name" column="name"></property>
+		<property name="des" column="des"></property>
+		<property name="status" column="status"></property>
+		
+		<!-- 1 => N 通过类型去查询到物品 	XMF	-->
+		<set name="goods" inverse="true" lazy="true" cascade="all">
+			<key column="goodstypeid"></key>
+			<one-to-many class="com.oa.bean.Goods"/>
+		</set>
+		
+	</class>
+</hibernate-mapping>

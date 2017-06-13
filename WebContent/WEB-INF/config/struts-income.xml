@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="income-struts" extends="my-struts" namespace="/ie">
+		<action name="*" class="com.oa.action.IncomeAction" method="{1}">
+			<result name="incomeHome">/WEB-INF/pagers/finances/income_home.jsp</result>
+			<result name="pager" type="json"></result>
+			<result name="all" type="json"></result>
+		</action>
+	</package>
+	
+	
+	
+</struts>

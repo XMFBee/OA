@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- 郭玉清 -->
+<struts>
+    
+	<package name="payType-struts" extends="my-struts" namespace="/payType">
+		<action name="*" class="com.oa.action.PayTypeAction" method="{1}">
+			<result name="pager" type="json"></result>
+			<result name="add" type="json"></result>
+			<result name="update" type="json"></result>
+			<result name="type" type="json"></result>
+			<result name="showPayType">/WEB-INF/pagers/finances/payType.jsp</result>
+			<result name="disable" type="json"></result> 
+            <result name="activate" type = "json"></result>		
+		</action>
+	</package>
+	
+</struts>
+
+
+
+
+
+
+

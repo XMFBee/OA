@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+    "http://struts.apache.org/dtds/struts-2.3.dtd">
+    <!-- 郭玉清 -->
+<struts>
+	<package name="payinfo-struts" extends="my-struts" namespace="/payinfo">
+		<action name="*" class="com.oa.action.info.PayInfoAction" method="{1}">
+			<result name="query_page" type="json"></result>
+			<result name="query_name" type="json"></result>
+			<result name="save" type="json"></result>
+			<result name="update" type="json"></result>
+			<result name="showPayInfo">/WEB-INF/pagers/finances/pay.jsp</result>
+		</action>
+	</package>
+</struts>

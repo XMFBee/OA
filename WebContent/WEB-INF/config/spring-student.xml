@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+	<!-- 邱康  -->
+	
+	<!--学生  -->
+  	<bean id = "studentDAO" class = "com.oa.dao.StudentDAOImpl" autowire="byType"></bean>
+
+    <bean id = "studentService" class = "com.oa.service.StudentServiceImpl" autowire="byType"></bean>
+	<bean id="incomeService" class="com.oa.service.IncomeServiceImpl" autowire="byType"></bean>
+	
+	<bean id="incomeTypeService" class="com.oa.service.IncomeTypeServiceImpl" autowire="byType"></bean>
+	
+    <bean id = "studentAction" class = "com.oa.action.StudentAction" autowire="byType"></bean>
+    
+	<!-- 宿舍  -->
+	
+	<bean id = "roomDAO" class = "com.oa.dao.RoomDAOImpl" autowire="byType"></bean>
+
+    <bean id = "roomService" class = "com.oa.service.RoomServiceImpl" autowire="byType"></bean>
+
+    <bean id = "roomAction" class = "com.oa.action.RoomAction" autowire="byType"></bean>
+    
+    
+     <!-- 班级 -->
+    <bean id = "gradeDAO" class = "com.oa.dao.GradeDAOImpl" autowire="byType"></bean>
+
+    <bean id = "gradeService" class = "com.oa.service.GradeServiceImpl" autowire="byType"></bean>
+
+    <bean id = "gradeAction" class = "com.oa.action.GradeAction" autowire="byType"></bean>
+    
+    <!-- 学生反馈  -->
+	
+	<bean id = "stuFeedbackDAO" class = "com.oa.dao.StudentFeedbackDAOImpl" autowire="byType"></bean>
+
+    <bean id = "stuFeedbackService" class = "com.oa.service.StudentFeedbackServiceImpl" autowire="byType"></bean>
+
+    <bean id = "stuFeedbackAction" class = "com.oa.action.StudentFeedbackAction" autowire="byType"></bean>
+    
+      <!-- 学生成绩  -->
+	
+	<bean id = "scoreDAO" class = "com.oa.dao.ScoreDAOImpl" autowire="byType"></bean>
+
+    <bean id = "scoreService" class = "com.oa.service.ScoreServiceImpl" autowire="byType"></bean>
+
+    <bean id = "scoreAction" class = "com.oa.action.ScoreAction" autowire="byType"></bean>
+    
+        <!-- 学生考勤信息 -->
+	
+	<bean id = "stuCheckingDAO" class = "com.oa.dao.StudentCheckingDAOImpl" autowire="byType"></bean>
+
+    <bean id = "stuCheckingService" class = "com.oa.service.StudentCheckingServiceImpl" autowire="byType"></bean>
+
+    <bean id = "stuCheckingAction" class = "com.oa.action.StudentCheckingAction" autowire="byType"></bean>
+    
+     <!-- 学生请假-->
+	
+	<bean id = "stuLeaveDAO" class = "com.oa.dao.StudentLeaveDAOImpl" autowire="byType"></bean>
+
+    <bean id = "stuLeaveService" class = "com.oa.service.StudentLeaveServiceImpl" autowire="byType"></bean>
+
+    <bean id = "stuLeaveAction" class = "com.oa.action.StudentLeaveAction" autowire="byType"></bean>
+</beans>

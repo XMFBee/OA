@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 郭昶 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name="Duty" table="t_duty"> 
+		<id name="dutyId" column="dutyid"> 
+            <generator class="uuid.hex"/> 
+        </id>
+        <property name="weekday" column="weekday"></property>
+		<property name="add1" column="add1"></property>
+		<property name="add2" column="add2"></property>
+		<property name="add3" column="add3"></property>
+		<property name="add4" column="add4"></property>
+		<property name="add5" column="add5"></property>
+		<property name="add6" column="add6"></property>
+		<property name="add7" column="add7"></property>
+		<property name="add8" column="add8"></property>
+		
+		<many-to-one name="emp1" column="empid1"></many-to-one>
+		<many-to-one name="emp2" column="empid2"></many-to-one>
+		<many-to-one name="emp3" column="empid3"></many-to-one>
+		<many-to-one name="emp4" column="empid4"></many-to-one>
+		<many-to-one name="emp5" column="empid5"></many-to-one>
+		<many-to-one name="emp6" column="empid6"></many-to-one>
+		<many-to-one name="emp7" column="empid7"></many-to-one>
+		<many-to-one name="emp8" column="empid8"></many-to-one>
+	</class>
+</hibernate-mapping>

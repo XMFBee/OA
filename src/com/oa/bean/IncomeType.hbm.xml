@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        <!-- 程燕 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name = "IncomeType" table ="t_incometype" >
+		<id name="incomeTypeId" column = "incometypeid" >
+			<generator class="uuid.hex" /> 
+		</id>
+		<property name="name" column="name" />
+		<property name="des" column = "des" />
+		<property name="status" column="status" />
+		
+		<!-- 赖泰君 收入类型 -->
+		<set name="incomes">
+			<key column="incometypeid"></key>
+			<one-to-many class="com.oa.bean.Income"></one-to-many>
+		</set>
+		
+	</class>
+</hibernate-mapping>

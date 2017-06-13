@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.oa.bean">
+	<class name="Report" table="t_report"> 
+		<id name="reportId" column="reportid"> 
+            <generator class="uuid.hex"/> 
+        </id>
+        <property name="reportday" column="reportday"></property>
+        <property name="des" column="des"></property>
+        <property name="status" column="status"></property>
+
+		<!-- 日志对员工 -->
+		<many-to-one name="employee" column="empid" class= "Employee" />
+	</class>
+</hibernate-mapping>

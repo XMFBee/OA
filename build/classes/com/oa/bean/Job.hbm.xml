@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        <!-- 程燕 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name = "Job" table ="t_job" >
+		<id name="jobId" column = "jobid" >
+			<generator class="uuid.hex" /> 
+		</id>
+		<property name="company" column="company" />
+		<property name="jobTitle" column = "jobTitle" />
+		<property name="salary" column="salary" />
+		<property name="welfare" column="welfare" />
+		<property name="address" column="address" />
+		<property name="comPhone" column="comPhone" />
+		<property name="hireDay" column="hireDay" />
+		<property name="status" column="status" />
+		
+		<!-- stuId -->
+		 <many-to-one column = "stuid" name = "stu" class = "com.oa.bean.Student" fetch = "join" insert="false" update="false"></many-to-one>
+	</class>
+</hibernate-mapping>

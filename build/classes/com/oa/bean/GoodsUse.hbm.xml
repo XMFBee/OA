@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <!-- 程燕 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name = "GoodsUse" table ="t_goodsuse" >
+		<id name="useId" column = "useid" >
+			<generator class="uuid.hex" /> 
+		</id>
+		<property name="quantity" column = "quantity" />
+		<property name="useDay" column="useday" />
+		<property name="eReturnDay" column="ereturnday" />
+		<property name="returnDay" column="returnday" />
+		
+		<!--goodsId  many-to-one-->
+		<many-to-one name="goods" column="goodsid" class= "Goods"></many-to-one>
+		
+		<!--  empId  many-to-one	 -->
+		<many-to-one name="employee" column="empid"  class="com.oa.bean.Employee"></many-to-one>
+	</class>
+</hibernate-mapping>

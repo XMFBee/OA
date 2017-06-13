@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- 邱康 -->
+<struts>
+	<!-- 意向，预定，正式，学生 -->
+    <package name = "student-struts" extends = "my-struts" namespace="/stu">
+        <action name = "*" class ="com.oa.action.StudentAction" method = "{1}">
+            <result name="pager" type = "json"></result>
+            <result name="save" type = "json"></result>
+            <result name="update" type = "json"></result>
+            <result name="disable" type="json"></result> 
+            <result name="activate" type = "json"></result>
+          	<result name="comitUpdatePay" type = "json"></result> 
+          	<result name="comitOfficialPay" type = "json"></result>
+          <!-- 	<result name="error">/WEB-INF/pagers/login.jsp</result> -->
+            <result name="showPurpose">/WEB-INF/pagers/student/student_purpose.jsp</result>
+            
+            <result name="reservePager" type = "json"></result>
+            <result name="reserveSave" type = "json"></result>
+            <result name="reserveUpdate" type = "json"></result>
+            <result name="showReserve">/WEB-INF/pagers/student/student_reserve.jsp</result>
+            
+            <result name="officialPager" type = "json"></result>
+            <result name="officialSave" type = "json"></result>
+            <result name="officialUpdate" type = "json"></result>
+            <result name="addStuIds" type = "json"></result>
+            <result name="addStuRoomIds" type = "json"></result>
+            <result name="byId" >/WEB-INF/pagers/student/student_details.jsp</result>
+            <result name="showOfficial">/WEB-INF/pagers/student/student_official.jsp</result>
+            
+            <result name="stuGradeNullPager" type = "json"></result>
+            <result name="stuRoomNullPager" type = "json"></result>
+            <result name="stuGradePager" type = "json"></result>
+            <result name="stuRoomPager" type = "json"></result>
+            <result name="queryByName" type ="json"></result>
+            
+            <result name="showStu">/WEB-INF/pagers/user/stu-user.jsp</result>
+        </action>
+    </package>
+    
+    
+    <!-- 宿舍 -->
+     <package name = "room-struts" extends = "my-struts" namespace="/room">
+        <action name = "*" class ="com.oa.action.RoomAction" method = "{1}">
+            <result name="pager" type = "json"></result>
+            <result name="save" type = "json"></result>
+            <result name="update" type = "json"></result>
+            <result name="disable" type = "json"></result>
+            <result name="activae" type = "json"></result>
+            <result name="queryByName" type ="json"></result>
+            <result name="showRoom">/WEB-INF/pagers/student/room_pager.jsp</result>
+        </action>
+    </package>
+    
+      
+        <!-- 班级 -->
+     <package name = "grade-struts" extends = "my-struts" namespace="/grade">
+        <action name = "*" class ="com.oa.action.GradeAction" method = "{1}">
+            <result name="pager" type = "json"></result>
+            <result name="save" type = "json"></result>
+            <result name="update" type = "json"></result>
+              <result name="queryByName" type ="json"></result>
+            <result name="showGrade">/WEB-INF/pagers/student/grade_pager.jsp</result>
+        </action>
+    </package>
+    <!-- 学生反馈 -->
+    <package name = "stuFeedback-struts" extends = "my-struts" namespace="/stuFeedback">
+        <action name = "*" class ="com.oa.action.StudentFeedbackAction" method = "{1}">
+            <result name="pager" type = "json"></result>
+            <result name="save" type = "json"></result>
+            <result name="update" type = "json"></result>
+            <result name="disable" type = "json"></result>
+            <result name="activae" type = "json"></result>
+            <result name="showStuFeedback" >/WEB-INF/pagers/student/student_feedback.jsp</result>
+        </action>
+    </package>
+    
+       <!-- 学生成绩 -->
+    <package name = "score-struts" extends = "my-struts" namespace="/score">
+        <action name = "*" class ="com.oa.action.ScoreAction" method = "{1}">
+            <result name="pager" type = "json"></result>
+            <result name="save" type = "json"></result>
+            <result name="update" type = "json"></result>
+            <result name = "queryByCourse" type="json"></result>
+            <result name="showScore" >/WEB-INF/pagers/student/student_score.jsp</result>
+        </action>
+    </package>
+    
+       <!-- 学生考勤信息 -->
+    <package name = "studentChecking-struts" extends = "my-struts" namespace="/stuChecking">
+        <action name = "*" class ="com.oa.action.StudentCheckingAction" method = "{1}">
+            <result name="pager" type = "json"></result>
+            <result name="showStuChecking" >/WEB-INF/pagers/student/student_checking.jsp</result>
+        </action>
+    </package>
+    
+    <package name = "studentLeave-struts" extends = "my-struts" namespace="/stuLeave">
+        <action name = "*" class ="com.oa.action.StudentLeaveAction" method = "{1}">
+            <result name="pager" type = "json"></result>
+            <result name="showStuLeave" >/WEB-INF/pagers/student/student_leave.jsp</result>
+        </action>
+    </package>
+</struts>

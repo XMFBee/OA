@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+        <!-- 郭昶 struts-course配置文件 -->
+<struts>
+	<package name="course-struts" extends="my-struts" namespace="/course">
+		<action name="*" class="com.oa.action.CourseAction" method="{1}">
+			<result name="Id" type="json"></result>
+			<result name="page" type="json"></result>
+			<result name="save" type="json"></result>
+			<result name="update" type="json"></result>
+			<result name="disable" type="json"></result>
+			<result name="enabled" type="json"></result>
+			<result name="queryByName" type="json"></result>
+			<result name="showcourse">/WEB-INF/pagers/educational/course_home.jsp</result>
+		</action>
+	</package>
+</struts>

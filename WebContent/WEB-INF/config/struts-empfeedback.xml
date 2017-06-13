@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+        <!-- 郭昶 struts-Empfeedback员工反馈配置文件 -->
+<struts>
+	<package name="empfeedback-struts" extends="my-struts" namespace="/empfeedback">
+		<action name="*" class="com.oa.action.EmpfeedbackAction" method="{1}">
+			<result name="Id" type="json"></result>
+			<result name="pager" type="json"></result>
+			<result name="save" type="json"></result>
+			<result name="update" type="json"></result>
+			<result name="dis" type="json"></result>
+			<result name="ena" type="json"></result>
+			<result name="showpager">/WEB-INF/pagers/educational/empfeedback.jsp</result>
+			<result name="showmypager">/WEB-INF/pagers/educational/myempfeedback.jsp</result>
+		</action>
+	</package>
+	
+	<package name="empfeedbackinfo-struts" extends="my-struts" namespace="/empfeedbackinfo">
+		<action name="*" class="com.oa.action.info.EmpfeedbackInfoAction" method="{1}">
+			<result name="pager" type="json"></result>
+			<result name="queryByName" type="json"></result>
+		</action>
+	</package>
+</struts>        

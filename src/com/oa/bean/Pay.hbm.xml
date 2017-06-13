@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.oa.bean">
+	<class name="Pay" table="t_pay">
+		<id name="payId" column="payid">
+			<generator class="uuid.hex" />
+		</id>
+
+		<property name="payDay" column="payday"></property>
+		<property name="des" column="des"></property>
+		<property name="pay" column="pay"></property>
+		<property name="toName" column="toname"></property>
+		<property name="toPhone" column="tophone"></property>
+		<property name="payTypeId" column="paytypeid"></property>
+		<property name="empId" column="empid"></property>
+		<many-to-one name="payType" column="paytypeid" class="com.oa.bean.PayType"
+			fetch="join" update="false" insert="false"></many-to-one>
+ 		
+		<many-to-one name="emp" class="com.oa.bean.Employee" column="empid" fetch="join" insert="false" update="false"></many-to-one>
+	</class>
+</hibernate-mapping>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

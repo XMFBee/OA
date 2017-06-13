@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+  
+   <!-- 郭昶 spring-meetting研讨会配置文件  -->
+   
+    <bean id="meettingDAO" class="com.oa.dao.MeettingDAOImpl" autowire="byType"/>
+  	<bean id="meettingService" class="com.oa.service.MeettingServiceImpl" autowire="byType"/>
+  	<bean id="meettingAction" class="com.oa.action.MeettingAction" autowire="byType"/>
+    
+    <bean id="meettingInfoDAO" class="com.oa.dao.info.MeettingInfoDAOImpl" autowire="byType"/>
+  	<bean id="meettingInfoService" class="com.oa.service.info.MeettingInfoServiceImpl" autowire="byType"/>
+  	<bean id="meettingInfoAction" class="com.oa.action.info.MeettingInfoAction" autowire="byType"/>
+</beans>

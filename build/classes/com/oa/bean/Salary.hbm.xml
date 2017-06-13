@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.oa.bean">
+	<class name="Salary" table="t_salary"> 
+		<id name="salaryId" column="salaryid"> 
+            <generator class="uuid.hex"/> 
+        </id>
+        <property name="extrasalary" column="extrasalary"></property>
+        <property name="subsalary" column="subsalary"></property>
+        <property name="salaryday" column="salaryday"></property>
+		<property name="totalsalary" column="totalsalary"></property>
+
+		<many-to-one name="employee" column="empid" class="com.oa.bean.Employee" fetch="join" ></many-to-one>
+		
+	</class>
+</hibernate-mapping>

@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<!-- 部门 -->
+	 <package name = "department-struts" extends = "my-struts" namespace="/dep">
+	 	<action name="depEmps" class= "com.oa.action.info.DepEmpsAction" >
+	 		<result name = "success" type="json" />
+	 	</action>
+        <action name = "*" class ="com.oa.action.DepartmentAction" method="{1}">
+            <result name="pager" type="json" />
+            <result name="save" type="json" />
+            <result name="delete" type="json" />
+            <result name = "update" type = "json" />
+            
+            <result name = "updStatus" type="json" />            
+            <result name = "queryEmployees" type="json" />
+            <result name= "demo" >/WEB-INF/pagers/officeWork/demo.jsp</result>
+            
+            <result name = "showDepartment" >/WEB-INF/pagers/officeWork/department.jsp</result>
+        </action> 
+    </package>
+
+<!-- 员工 -->
+	<package name = "employee-struts" extends = "my-struts" namespace="/employee">
+        <action name = "*" class ="com.oa.action.EmployeeAction" method="{1}">
+            <result name="pager" type="json" />
+            <result name="save" type="json" />
+            <result name="delete" type="json" />
+            <result name = "update" type = "json" />
+            <result name="showEmployee">/WEB-INF/pagers/officeWork/employee.jsp</result>
+            <result name="showUser">/WEB-INF/pagers/user/emp-user.jsp</result>
+            <result name="input" >/WEB-INF/pagers/officeWork/employee.jsp</result>
+            <result name="updStatus" type="json" />
+            
+            
+            <result name="pagerById" type="json"></result>
+            <result name="allRoles" type="json" />
+            <result name="selectEmps" type="json" />
+        </action> 
+    </package>
+    
+	<!-- 物品领用与归还 -->
+	<package name = "goodsUse-struts" extends = "my-struts" namespace="/goodsUse">
+		 <action name = "*" class ="com.oa.action.GoodsUseAction" method="{1}">
+		 	<result name="pager" type="json" />
+		 	<result name="save" type="json" />
+		 	<result name = "update" type= "json" />
+		 	
+		 	<result name = "showGoodsUse">/WEB-INF/pagers/officeWork/goodsUse.jsp</result>
+		 </action>
+	</package>
+	
+	<!-- 值班  -->
+	<package name = "duty-struts" extends = "my-struts" namespace="/duty">
+        <action name = "*" class ="com.oa.action.DutyAction" method="{1}">
+            <result name="update" type="json" />
+            <result name="allDuty" type="json" />
+            <result name="showDuty">/WEB-INF/pagers/officeWork/duty.jsp</result>
+            
+            <result name="input" >/WEB-INF/pagers/officeWork/employee.jsp</result>
+            
+            <result name = "currDuty" type="json"/>
+            <result name="saveAdd" type="json" />
+            <result name = "updAdd" type = "json" />
+            <result name="hemps" type="json" />
+            <result name="happs" type="json" />
+            
+            
+        </action> 
+    </package>
+    
+    
+    <!-- 员工考勤 -->
+    <package name = "empChecking-struts" extends = "my-struts" namespace="/empChecking">
+        <action name = "*" class ="com.oa.action.EmpCheckingAction" method="{1}">
+            <result name="pager" type="json" />
+            <result name="save" type="json" />
+            <result name="delete" type="json" />
+            <result name ="update" type = "json" />
+            
+            <result name="demoa" type="json"></result>
+            <result name="showEmpChecking" >/WEB-INF/pagers/officeWork/empChecking.jsp</result>
+            <result name = "showEmpCheckingInfo">/WEB-INF/pagers/officeWork/empCheckingInfo.jsp</result>
+        
+        </action> 
+        
+        <action name="pagerInfo" class= "com.oa.action.info.EmpCheckingInfoAction" method="pagerInfo">
+        	<result name="pagerInfo" type="json" />
+        </action>
+        
+    </package>
+    
+    <!-- 导入与输出excel -->
+    <package name = "upDoExcel-struts" extends = "my-struts" namespace="/excel">
+     	<action name = "excel*" class ="com.oa.action.info.ExcelPOIAction" method="excel{1}">
+    	  <result name="excelOut" type="stream" >
+        		<param name="inputName">outExcelFile</param>
+        		<param name="contentDisposition">attachment;fileName="${fileName}"</param>  
+          </result>
+          <result name="excelIn" type="json" />
+        </action> 
+    </package>
+	
+    <!-- 员工值班 -->
+    <package name = "check-struts" extends = "my-struts" namespace="/check">
+        <action name = "*" class ="com.oa.action.EmpCheckAction" method="{1}">
+            <result name="pager" type="json" />
+            <result name="save" type="json" />
+            <result name="delete" type="json" />
+            <result name ="update" type = "json" />
+            
+            <result name="showCheck" >/WEB-INF/pagers/officeWork/check.jsp</result>
+        </action> 
+    </package>
+    
+    <!-- 员工上诉申请与审核 -->
+    <package name = "empAppeal-struts" extends = "my-struts" namespace="/empAppeal">
+        <action name = "*" class ="com.oa.action.EmpAppealAction" method="{1}">
+            <result name="pager" type="json" />
+            <result name="save" type="json" />
+            <result name ="update" type = "json" />
+            
+            <result name="showEmpAppeal" >/WEB-INF/pagers/officeWork/empappeal.jsp</result>
+               
+            <result name="doEmpappeal">/WEB-INF/pagers/officeWork/doEmpappeal.jsp</result>
+            <result name="seeEmpappeal">/WEB-INF/pagers/officeWork/seeEmpappeal.jsp</result>
+        </action> 
+    </package>
+    
+    <!-- 员工请假与审核 -->
+    <package name = "empleave-struts" extends = "my-struts" namespace="/empleave">
+        <action name = "*" class ="com.oa.action.EmpleaveAction" method="{1}">
+            <result name="pager" type="json" />
+            <result name="save" type="json" />
+            <result name ="update" type = "json" />
+            
+            <result name="showEmpleave" >/WEB-INF/pagers/officeWork/empleave.jsp</result>
+               
+            <result name="doEmpleave">/WEB-INF/pagers/officeWork/doEmpleave.jsp</result>
+            <result name="seeEmpleave">/WEB-INF/pagers/officeWork/seeEmpleave.jsp</result>
+        </action> 
+    </package>
+    
+    
+    
+    
+    
+    <!-- 员工日志 -->
+        <package name = "report-struts" extends = "my-struts" namespace="/report">
+        <action name = "*" class ="com.oa.action.ReportAction" method="{1}">
+            <result name="pager" type="json" />
+            <result name="save" type="json" />
+            <result name="showReport" >/WEB-INF/pagers/officeWork/report.jsp</result>
+            
+            <result name="myReport">/WEB-INF/pagers/officeWork/myReport.jsp</result>
+            <result name="otherReport">/WEB-INF/pagers/officeWork/otherReport.jsp</result>
+        </action> 
+    </package>
+    
+    <!-- 所需的JSON -->
+    	<package name = "json-struts" extends="my-struts" namespace="/json">
+    		<action name="*" class= "com.oa.action.info.SomeJSON" >
+    			<result name="success">/WEB-INF/pagers/officeWork/json/{1}.json</result>
+    		</action>
+    	</package>
+    	
+    <!-- 公告轮播 -->
+    	<package name = "noticeInfo-struts" extends="my-struts" namespace="/noticeInfo">
+    		<action name = "*" class= "com.oa.action.info.NoticeInfoAction" method ="{1}">
+    		</action>
+    	</package>
+</struts>

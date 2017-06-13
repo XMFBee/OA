@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 赖泰君 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oa.bean">
+    <class name="StudentLeave" table="t_stuleave">
+        <id name="leaveId" column="leaveid">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="startTime" column="starttime"></property>
+        <property name="endTime" column="endtime"></property>
+        <property name="leaveDay" column="leaveday"></property>
+        <property name="des" column="des"></property>
+        <property name="firLevel" column="firlevel"></property>
+        <property name="secondLevel" column="secondlevel"></property>
+        <property name="pass" column="pass"></property>
+        
+        <many-to-one column = "stuid" name = "stu" class = "com.oa.bean.Student" fetch = "join" insert="false" update="false"></many-to-one>
+    </class>
+</hibernate-mapping>

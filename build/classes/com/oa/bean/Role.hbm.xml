@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.oa.bean">
+	<class name="Role" table="t_role"> 
+		<id name="roleId" column="roleid"> 
+            <generator class="uuid.hex"/> 
+        </id>
+        <property name="name" column="name"></property>
+        <property name="des" column="des"></property>
+        <property name="status" column="status"></property>
+        
+        <set name = "roleauts" >
+            <key column = "roleid"></key>
+            <one-to-many class = "com.oa.bean.Roleaut"></one-to-many>
+        </set>
+	</class>
+</hibernate-mapping>

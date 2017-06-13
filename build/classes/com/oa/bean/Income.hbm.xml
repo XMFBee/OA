@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        <!-- 程燕 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name = "Income" table ="t_income" >
+		<id name="incomeId" column = "incomeid" >
+			<generator class="uuid.hex" /> 
+		</id>
+		<property name="incomeDay" column="incomeday" />
+		<property name="des" column = "des" />
+		<property name="income" column="income" />
+		<property name="incomeTypeId" column="incometypeId" />
+		<property name="stuId" column="stuid" />
+		<property name="empId" column="empid" />
+		<!-- incomeTypeId -->
+		<!-- empId -->
+		<!--stuId  -->
+		
+		<!-- 赖泰君 收入类型 -->
+		<many-to-one name="incomeType" column="incometypeid" class="com.oa.bean.IncomeType" fetch = "join" insert="false" update="false"></many-to-one>
+		
+		<many-to-one name="employee" column="empid" class="com.oa.bean.Employee" insert="false" update="false"></many-to-one>
+		<many-to-one name="student" column="stuid" class="com.oa.bean.Student" insert="false" update="false"></many-to-one>
+	</class>
+</hibernate-mapping>

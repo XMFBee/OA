@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 赖泰君 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oa.bean">
+    <class name="StudentChecking" table="t_stuchecking">
+        <id name="checkingId" column="checkingid">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="checkingDay" column="checkingday"></property>
+        <property name="checking1" column="checking1"></property>
+        <property name="checking2" column="checking2"></property>
+        <property name="checking3" column="checking3"></property>
+        
+        <many-to-one column = "stuid" name = "stu" class = "com.oa.bean.Student" fetch = "join" insert="false" update="false"></many-to-one>
+    </class>
+</hibernate-mapping>

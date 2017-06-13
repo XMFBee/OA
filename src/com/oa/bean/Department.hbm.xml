@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 郭昶 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name="Department" table="t_dept"> 
+		<id name="depId" column="depid"> 
+            <generator class="uuid.hex"/> 
+        </id>
+        <property name="name" column="name"></property>
+		<property name="des" column="des"></property>
+		<property name="status" column="status"></property>
+		
+		
+		
+		<!-- 
+		<one-to-one name="employee" class="com.oa.bean.Employee"></one-to-one>
+		  -->
+		  <many-to-one name="employee" class="com.oa.bean.Employee" column="empid" />
+		  
+		<set name="employees">
+			<key column="depid"></key>
+			<one-to-many class="com.oa.bean.Employee" />
+		</set>
+		
+		
+		
+	</class>
+</hibernate-mapping>

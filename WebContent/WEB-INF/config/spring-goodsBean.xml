@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+	<!-- GoodsType 物品类型根据类型注入 -->
+   <bean id = "gtDAO" class = "com.oa.dao.GoodsTypeDAOImpl" autowire="byType"></bean>
+   <bean id = "gtService" class = "com.oa.service.GoodsTypeServiceImpl" autowire="byType"></bean>
+   <bean id = "gtAction" class = "com.oa.action.GoodsTypeAction" autowire="byType"></bean>
+   
+   <!-- Goods 物品根据类型注入 -->
+   <bean id = "goodsDAO" class = "com.oa.dao.GoodsDAOImpl" autowire="byType"></bean>
+   <bean id = "goodsService" class = "com.oa.service.GoodsServiceImpl" autowire="byType"></bean>
+   <bean id = "goodsAction" class = "com.oa.action.GoodsAction" autowire="byType"></bean>
+   
+   <!-- GoodsApp 物品申购根据类型注入 -->
+   <bean id = "goodsAppDAO" class = "com.oa.dao.GoodsAppDAOImpl" autowire="byType"></bean>
+   <bean id = "goodsAppService" class = "com.oa.service.GoodsAppServiceImpl" autowire="byType"></bean>
+   <bean id = "goodsAppAction" class = "com.oa.action.GoodsAppAction" autowire="byType"></bean>
+   <bean id = "goodsAppInfoDAO" class = "com.oa.dao.info.GoodsAppInfoDAOImpl" autowire="byType"></bean>
+   <bean id = "goodsAppInfoService" class = "com.oa.service.info.GoodsAppInfoServiceImpl" autowire="byType"></bean>
+
+</beans>

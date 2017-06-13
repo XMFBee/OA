@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- 赖泰君  -->
+<struts>
+    <package name="salaryInfo-struts" extends="my-struts" namespace="/sa">
+		<action name="*" class="com.oa.action.SalaryInfoAction" method="{1}">
+			<result name="pager" type="json"></result>
+			<result name="update" type="json"></result>
+			<result name="add" type="json"></result>
+			<result name="search" type="json"></result>
+			<result name="selfSalaryInfo" type="json"></result>
+			<result name="home">/WEB-INF/pagers/finances/salaryInfo_home.jsp</result>
+		</action>
+	</package>
+</struts>

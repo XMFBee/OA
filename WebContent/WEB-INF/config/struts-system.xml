@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<!-- 郭玉清 -->
+<struts>
+	<package name="system-struts" extends="my-struts" namespace="/noticeType">
+		<action name="*" class="com.oa.action.SystemAction" method="{1}">
+			<result name="pager" type="json"></result>
+			<result name="add" type="json"></result>
+			<result name="update" type="json"></result>
+			<result name="disable" type="json"></result> 
+            <result name="activate" type = "json"></result>
+            <result name="type" type="json"></result>
+			<result name="showNoticeType">/WEB-INF/pagers/system/notice-Type.jsp</result>			
+		</action>
+	</package>
+
+	<package name="notice-struts" extends="my-struts" namespace="/notice">
+		<action name="*" class="com.oa.action.NoticeAction" method="{1}">
+			<result name="notice-pager" type="json"></result>
+			<result name="notice-add" type="json"></result>
+			<result name="typeall" type="json"></result>
+			<result name="notice-update" type="json"></result>
+			<result name="disable" type="json"></result> 
+            <result name="activate" type = "json"></result>	
+            <result name="queryByName" type = "json"></result>
+			<result name="showNotice">/WEB-INF/pagers/system/notice.jsp</result>
+		</action>
+	</package>
+	
+	<package name="checking-struts" extends="my-struts" namespace="/checking">
+		<action name="*" class="com.oa.action.CheckingAction" method="{1}">
+			<result name="checking-pager" type="json"></result>
+			<result name="checking-add" type="json"></result>
+			<result name="checking-update" type="json"></result>	
+			<result name="showChecking">/WEB-INF/pagers/system/emp-checking.jsp</result>
+		</action>
+	</package>
+	
+	<package name="role-struts" extends="my-struts" namespace="/role">
+		<action name="*" class="com.oa.action.RoleAction" method="{1}">
+			<result name="role-pager" type="json"></result>
+			<result name="role-add" type="json"></result>
+			<result name="role-update" type="json"></result>	
+			<result name="disable" type="json"></result> 
+            <result name="activate" type = "json"></result>	
+			<result name="showRole">/WEB-INF/pagers/system/role.jsp</result>
+		</action>
+	</package>
+	
+</struts>
+
+
+
+
+
+
+

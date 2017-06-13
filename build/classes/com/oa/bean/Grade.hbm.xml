@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+        <!-- 程燕 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name = "Grade" table ="t_grade" >
+		<id name="gradeId" column = "gradeid" >
+			<generator class="uuid.hex" /> 
+		</id>
+		<property name="name" column="name" />
+		<property name="des" column = "des" />
+		<property name="quantity" column="quantity" />
+		<property name="status" column="status" />
+		<property name="empIds1" column="empid1" />
+		<property name="empIds2" column="empid2" />
+		<property name="empIds3" column="empid3" />
+		<!-- 邱康   关联到员工 -->
+		<many-to-one name = "empId1" column = "empid1" class = "com.oa.bean.Employee" fetch = "join" insert="false" update="false" ></many-to-one>
+		<many-to-one name = "empId2" column = "empid2" class = "com.oa.bean.Employee" fetch = "join" insert="false" update="false" ></many-to-one>
+		<many-to-one name = "empId3" column = "empid3" class = "com.oa.bean.Employee" fetch = "join" insert="false" update="false" ></many-to-one>
+		<!-- 邱康-->
+		
+		<!-- 郭昶 -->
+		<set name="progress">
+			<key column="gradeid"></key>
+			<one-to-many class="com.oa.bean.Progress"/>
+		</set>
+		
+		<set name="stus">
+			<key column="gradeid"></key>
+			<one-to-many class="com.oa.bean.Progress"/>
+		</set>
+	</class>
+</hibernate-mapping>

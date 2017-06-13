@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 郭昶 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name="Goods" table="t_goods">
+		<id name="goodsId" column="goodsId">
+			<generator class="uuid.hex"></generator>
+		</id>
+		<property name="name" column="name"></property>
+		<property name="quantity" column="quantity"></property>
+		<property name="des" column="des"></property>
+		<property name="unitPrice" column="unitprice"></property>
+		<property name="buyDay" column="buyday"></property>
+		<property name="status" column="status"></property>
+		
+		<!-- 多个物品对应一个物品类型	N => 1 	XMF -->
+		<many-to-one name="goodsTypeId" column="goodstypeid" class="com.oa.bean.GoodsType"
+			fetch="join"  update="false"></many-to-one>
+			
+	</class>
+</hibernate-mapping>

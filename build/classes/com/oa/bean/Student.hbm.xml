@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 赖泰君 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oa.bean">
+    <class name="Student" table="t_stu">
+        <id name="stuId" column="stuid">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="stuNo" column="stuno"></property>
+        <property name="name" column="name"></property>
+        <property name="pwd" column="pwd"></property>
+        <property name="idCard" column="idcard"></property>
+        <property name="phone" column="phone"></property>
+        <property name="qq" column="qq"></property>
+        <property name="weChat" column="wechat"></property>
+        <property name="school" column="school"></property>
+        <property name="age" column="age"></property>
+        <property name="birthday" column="birthday"></property>
+        <property name="gender" column="gender"></property>
+        <property name="address" column="address"></property>
+        <property name="nation" column="nation"></property>
+        <property name="residence" column="residence"></property>
+        <property name="gradeId" column="gradeid"></property>
+        <property name="parentName" column="parentname"></property>
+        <property name="parentPhone" column="parentphone"></property>
+        <property name="startDay" column="startday"></property>
+        <property name="des" column="des"></property>
+        <property name="status" column="status"></property>
+        <property name="stuStatus" column="stustatus"></property>
+        <property name="role" column="role"></property>
+        <property name="roomId" column="roomid"></property>
+        <property name="empId" column="empid"></property>
+        <!-- qk 多个学生对应一个宿舍 -->
+       <!--  <one-to-one name="room" class="com.oa.bean.Room" property-ref="stu"/> -->
+        <many-to-one column = "roomid" name = "room" class = "com.oa.bean.Room" fetch = "join" insert="false" update="false"></many-to-one>
+        <many-to-one column = "gradeid" name = "grade" class = "com.oa.bean.Grade" fetch = "join" insert="false" update="false"></many-to-one>
+         <many-to-one column = "empid" name = "emp" class = "com.oa.bean.Employee" fetch = "join" insert="false" update="false"></many-to-one>
+        <!-- qk 一个学生对应多个反馈-->
+        <set name = "stuFks" lazy = "true" inverse = "true">
+            <key column = "feedbackid"></key>
+            <one-to-many class = "com.oa.bean.StudentFeedback"></one-to-many>
+        </set>
+        
+        <!-- qk 一个学生对应多个成绩-->
+          <set name = "scores" lazy = "true" inverse = "true">
+            <key column = "stuid"></key>
+            <one-to-many class = "com.oa.bean.Score"></one-to-many>
+        </set>
+        
+         <!-- qk 一个学生对应多个考勤信息-->
+          <set name = "stucks" lazy = "true" inverse = "true">
+            <key column = "stuid"></key>
+            <one-to-many class = "com.oa.bean.StudentChecking"></one-to-many>
+        </set>
+        
+           <!-- qk 一个学生对应多个就业-->
+          <set name = "jobs" lazy = "true" inverse = "true">
+            <key column = "stuid"></key>
+            <one-to-many class = "com.oa.bean.Job"></one-to-many>
+        </set>
+         <!-- qk 一个学生对应多次谈心-->
+        <set name = "talks" lazy = "true" inverse = "true">
+			<key column = "empid" />
+			<one-to-many class= "com.oa.bean.Talk"/>
+		</set>
+		
+		  <!-- qk 一个学生对应多次请假-->
+        <set name = "stuLeaves" lazy = "true" inverse = "true">
+			<key column = "stuid" />
+			<one-to-many class= "com.oa.bean.StudentLeave"/>
+		</set>
+		
+		<set name="incomes" lazy = "true" inverse = "true">
+			<key column="stuid"></key>
+			<one-to-many class="com.oa.bean.Income"></one-to-many>
+		</set>
+		
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 赖泰君 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oa.bean">
+    <class name="Authority" table="t_authority">
+        <id name="autId" column="autid">
+            <generator class="native"></generator>
+        </id>
+        <property name="className" column="className"></property>
+        <property name="des" column="des"></property>
+        
+        <set name = "roleauts">
+            <key column = "autid"></key>
+            <one-to-many class = "com.oa.bean.Roleaut"></one-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

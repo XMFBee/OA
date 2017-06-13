@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+        <!-- 郭昶 struts-meetting研讨会配置文件 -->
+<struts>
+	<!-- 研讨会 -->
+	<package name="meetting-struts" extends="my-struts" namespace="/meetting">
+		<action name="*" class="com.oa.action.MeettingAction" method="{1}">
+			<result name="Id" type="json"></result>
+			<result name="page" type="json"></result>
+			<result name="save" type="json"></result>
+			<result name="update" type="json"></result>
+			<result name="dis" type="json"></result>
+			<result name="ena" type="json"></result>
+			<result name="showmeetting">/WEB-INF/pagers/educational/meetting_home.jsp</result>
+		</action>
+	</package>
+	
+	<!-- 会议info -->
+	<package name="meettinginfo-struts" extends = "my-struts" namespace="/meettinginfo">
+		<action name="*" class="com.oa.action.info.MeettingInfoAction" method="{1}">
+			<result name="pager" type="json"></result>
+			<result name="queryByName" type="json"></result>
+			<result name="showpage">/WEB-INF/pagers/educational/meetting_info.jsp</result>
+		</action>
+	</package>
+
+	<!-- 查找部门和部门中的员工info -->	
+	<!-- <package name = "depInfo-struts" extends = "my-struts" namespace="/depInfo">
+        <action name = "*" class ="com.oa.action.info.MeettingDepInfoAction" method = "{1}">
+            <result name="pager" type = "json"></result>
+            
+            <result name="showDepInfo">/WEB-INF/pagers/student/grade_pager.jsp</result>
+        </action>
+    </package> -->
+</struts>
+
+
+
+
+

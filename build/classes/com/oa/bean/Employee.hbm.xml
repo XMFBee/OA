@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+ <!-- 邱康 -->
+<hibernate-mapping package = "com.oa.bean">
+	<class name="Employee" table="t_emp"> 
+		<id name="empId" column="empid"> 
+            <generator class="uuid.hex"/> 
+        </id>
+		<property name="name" column="name"></property>
+		<property name="pwd" column="pwd"></property>
+		<property name="idCard" column="idcard"></property>
+		<property name="nation" column="nation"></property>
+		<property name="gender" column="gender"></property>
+		<property name="fingerNo" column="fingerno"></property>
+		<property name="birthday" column="birthday"></property>
+		<property name="email" column="email"></property>
+		<property name="phone" column="phone"></property>
+		<property name="qq" column="qq"></property>
+		<property name="weChat" column="wechat"></property>
+		<property name="address" column="address"></property>
+		<property name="married" column="married"></property>
+		<property name="contactName" column="contactname"></property>
+		<property name="contactPhone" column="contactphone"></property>
+		<property name="college" column="college"></property>
+		<property name="major" column="major"></property>
+		<property name="eduBack" column="eduback"></property>
+		<property name="bankName" column="bankname"></property>
+		<property name="accountName" column="accountname"></property>
+		<property name="accountNo" column="accountno"></property>
+		<property name="alipay" column="alipay"></property>
+		<property name="hireDay" column="hireday"></property>
+		<property name="resignDay" column="resignday"></property>
+		<property name="status" column="status"></property>
+		
+<!--  关联 -->
+		<many-to-one name="department" class="com.oa.bean.Department" column="depid"/>
+		<many-to-one name="role" class="com.oa.bean.Role" column = "roleid"/>
+		
+		<!-- 值班表关联到员工表 -->
+		<set name="duty1">	<key column="empid1" /><one-to-many class="Duty"/></set>		
+		<set name="duty2">	<key column="empid2" /><one-to-many class="Duty"/></set>		
+		<set name="duty3">	<key column="empid3" /><one-to-many class="Duty"/></set>		
+		<set name="duty4">	<key column="empid4" /><one-to-many class="Duty"/></set>		
+		<set name="duty5">	<key column="empid5" /><one-to-many class="Duty"/></set>		
+		<set name="duty6">	<key column="empid6" /><one-to-many class="Duty"/></set>		
+		<set name="duty7">	<key column="empid7" /><one-to-many class="Duty"/></set>		
+		<set name="duty8">	<key column="empid8" /><one-to-many class="Duty"/></set>		
+		
+		<!-- 考勤表关联到员工表 -->
+		<set name="empCheckings">
+			<key column="empid" />
+			<one-to-many class="EmpChecking"/>
+		</set>
+		
+		<!-- 员工日志关联到员工表 -->
+		<set name = "reports">
+			<key column = "empid" />
+			<one-to-many class= "Report"/>
+		</set>
+		
+		<!-- 班级表关联到员工 -->		 
+		<set name="grades1" lazy = "true" inverse = "true">	<key column="empid1" /><one-to-many class="Grade"/></set>		
+		<set name="grades2" lazy = "true" inverse = "true">	<key column="empid2" /><one-to-many class="Grade"/></set>		
+		<set name="grades3" lazy = "true" inverse = "true">	<key column="empid3" /><one-to-many class="Grade"/></set>
+		
+		<!-- 会议 -->		
+		<set name="meettings">	<key column="empid" /><one-to-many class="Meetting"/></set>		
+		
+		
+		<!-- 值班 -->
+		<set name="checks"><key column="empid" /><one-to-many class= "Check"/></set>
+		
+		 <!-- 请假 -->
+		<set name="empAppeals"><key column = "empid" /> <one-to-many class= "Empappeal"/></set>
+		
+		<set name="goodsUses"><key column="empid"/><one-to-many class= "GoodsUse"/></set> 
+		
+		<!-- qk 谈心 -->
+		 <set name = "talks">
+			<key column = "empid" />
+			<one-to-many class= "com.oa.bean.Talk"/>
+		</set>
+		
+		<!-- 郭昶 课程进度 -->
+		<set name="progress">
+			<key column="empid"/>
+			<one-to-many class="com.oa.bean.Progress"/>
+		</set>
+		
+		<!-- 赖泰君  工资基本信息 -->
+		<set name="salaryInfos">
+			<key column="empid"/>
+			<one-to-many class="com.oa.bean.SalaryInfo"/>
+		</set>
+		
+		<!-- 赖泰君 工资发放情况 -->
+		<set name="salarys">
+			<key column="empid"></key>
+			<one-to-many class="com.oa.bean.Salary"></one-to-many>
+		</set>
+		
+		<set name = "appEmps">
+			<key column = "empid" />
+			<one-to-many class= "com.oa.bean.GoodsApp"/>
+		</set>
+		
+		<!-- 郭玉清 关联公告表 -->
+		<set name="notice">
+		    <key column="empid" />
+		    <one-to-many class="com.oa.bean.Notice" />
+		</set>
+		
+		<set name="incomes" lazy="false">
+			<key column="empid"></key>
+			<one-to-many class="com.oa.bean.Income"></one-to-many>
+		</set>
+		<!--  qk 一个招生老师招多个学生-->
+		<set name="stus" lazy="false">
+			<key column="empid"></key>
+			<one-to-many class="com.oa.bean.Student"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

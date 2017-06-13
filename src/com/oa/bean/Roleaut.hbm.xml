@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oa.bean">
+    <class name="Roleaut" table="t_roleaut">
+        <id name="autRolId" column="autrolid">
+            <generator class="native"></generator>
+        </id>
+        
+       <many-to-one column = "roleid" name = "role" class = "com.oa.bean.Role" fetch = "join" ></many-to-one>
+       <many-to-one column = "autid" name = "aut" class = "com.oa.bean.Authority" fetch = "join" ></many-to-one>
+       
+    </class>
+</hibernate-mapping>

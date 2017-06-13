@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 郭玉清 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name="Notice" table="t_notice"> 
+		<id name="noticeId" column="noticeid"> 
+            <generator class="uuid.hex"/> 
+        </id>
+        <property name="empId" column="empid"></property>
+        <property name="name" column="name"></property>
+        <property name="des" column="des"></property>
+        <property name="noticeDay" column="noticeday"></property>
+        <property name="status" column="status"></property>
+        <property name="noticetypeid" column = "typeid"></property>
+		<many-to-one name="noticetype" column="typeid" class="com.oa.bean.NoticeType" fetch = "join" update="false" insert="false"></many-to-one>		
+        <many-to-one name="emp" column="empid" class="com.oa.bean.Employee" fetch = "join" update="false" insert="false"></many-to-one>
+	</class>
+</hibernate-mapping>

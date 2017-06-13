@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+	
+	<!-- 部门 -->
+	<bean id = "departmentDAO" class = "com.oa.dao.DepartmentDAOImpl" autowire="byType"></bean>
+    <bean id = "departmentService" class = "com.oa.service.DepartmentServiceImpl" autowire="byType"></bean>
+    
+<!--     部门 员工
+	<bean id = "depEmpDAOInfo" class = "com.oa.dao.info.DepEmpDAOInfoImpl" autowire="byType"></bean>
+    <bean id = "depEmpServiceInfo" class = "com.oa.service.info.DepEmpServiceInfoImpl" autowire="byType"></bean>
+
+    <bean id = "departmentAction" class = "com.oa.action.DepartmentAction" autowire="byType"></bean>
+	
+	员工
+   	<bean id = "employeeDAO" class = "com.oa.dao.EmployeeDAOImpl" autowire="byType"></bean>
+    <bean id = "employeeService" class = "com.oa.service.EmployeeServiceImpl" autowire="byType"></bean>
+    
+    
+    <bean id = "employeeAction" class = "com.oa.action.EmployeeAction" autowire="byType"></bean>
+     -->
+
+ <!-- 部门 员工-->
+	<bean id = "depEmpDAOInfo" class = "com.oa.dao.info.DepEmpDAOInfoImpl" autowire="byType"></bean>
+    <bean id = "depEmpServiceInfo" class = "com.oa.service.info.DepEmpServiceInfoImpl" autowire="byType"></bean>
+    
+    
+    <bean id = "depEmpsDAOInfo" class = "com.oa.dao.info.DepEmpsDAOInfoImpl" autowire="byType"></bean>
+    <bean id = "depEmpsServiceInfo" class = "com.oa.service.info.DepEmpsServiceInfoImpl" autowire="byType"></bean>
+   <!--  
+    <bean id = "empIdNameDAOInfo" class= "com.oa.dao.info.EmpIdNameDAOInfoImp" autowire="byType"></bean>
+    <bean id = "empIdNameServiceInfo" class= "com.oa.service.info.EmpIdNameServiceInfoImp" autowire="byType"></bean>
+ -->    
+    <bean id = "depEmpsAction" class= "com.oa.action.info.DepEmpsAction" autowire="byType"></bean>
+    <bean id = "departmentAction" class = "com.oa.action.DepartmentAction" autowire="byType"></bean>
+	
+
+	<!-- 员工 -->
+   	<bean id = "employeeDAO" class = "com.oa.dao.EmployeeDAOImpl" autowire="byType"></bean>
+    <bean id = "employeeService" class = "com.oa.service.EmployeeServiceImpl" autowire="byType"></bean>
+    
+    
+    <bean id = "employeeAction" class = "com.oa.action.EmployeeAction" autowire="byType"></bean>
+    
+    <!-- 物品领用与归还 -->
+    <bean id = "goodsUseDAO" class = "com.oa.dao.GoodsUseDAOImpl" autowire="byType"></bean>
+    <bean id = "goodsUseService" class = "com.oa.service.GoodsUseServiceImpl" autowire="byType"></bean>
+    <bean id = "goodsUseAction" class = "com.oa.action.GoodsUseAction" autowire="byType"></bean>
+    
+    <!-- 巡查 -->
+    <bean id = "dutyDAO" class = "com.oa.dao.DutyDAOImpl" autowire="byType"></bean>
+    <bean id = "dutyService" class = "com.oa.service.DutyServiceImpl" autowire="byType"></bean>
+    <bean id = "dutyAction" class = "com.oa.action.DutyAction" autowire="byType"></bean>
+    
+	<!-- 员工考勤 -->
+	<bean id = "empCheckingDAO" class = "com.oa.dao.EmpCheckingDAOImpl" autowire="byType"></bean>
+    <bean id = "empCheckingService" class = "com.oa.service.EmpCheckingServiceImpl" autowire="byType"></bean>
+    <bean id = "empCheckingAction" class = "com.oa.action.EmpCheckingAction" autowire="byType"></bean>
+    
+    <bean id = "excelPOIAction" class = "com.oa.action.info.ExcelPOIAction" autowire="byType"></bean>
+    <!-- 员工值班 -->
+    
+    <bean id = "empCheckDAO" class= "com.oa.dao.EmpCheckDAOImpl" autowire="byType"></bean> 
+    <bean id = "empCheckService" class = "com.oa.service.EmpCheckServiceImpl" autowire="byType"></bean>
+    <bean id = "empCheckAction" class = "com.oa.action.EmpCheckAction" autowire="byType"></bean>
+    
+    <!-- 员工上诉 -->
+    <bean id = "empAppealDAO" class= "com.oa.dao.EmpAppealDAOImpl" autowire="byType"></bean> 
+    <bean id = "empAppealService" class = "com.oa.service.EmpAppealServiceImpl" autowire="byType"></bean>
+    <bean id = "empAppealAction" class = "com.oa.action.EmpAppealAction" autowire="byType"></bean>
+    
+    <!-- 员工请假 -->
+    <bean id = "empleaveDAO" class= "com.oa.dao.EmpleaveDAOImpl" autowire="byType"></bean> 
+    <bean id = "empleaveService" class = "com.oa.service.EmpleaveServiceImpl" autowire="byType"></bean>
+    <bean id = "empleaveAction" class = "com.oa.action.EmpleaveAction" autowire="byType"></bean>
+    
+    <!-- 员工日志 -->
+    <bean id = "reportDAO" class= "com.oa.dao.ReportDAOImpl" autowire="byType"></bean> 
+    <bean id = "reportService" class = "com.oa.service.ReportServiceImpl" autowire="byType"></bean>
+    <bean id = "reportAction" class = "com.oa.action.ReportAction" autowire="byType"></bean>
+    
+    <!-- 其它杂项 -->
+    <bean id = "noticeAction" class= "com.oa.action.info.NoticeInfoAction" autowire="byType"></bean>
+    
+    <bean id = "someJSONAction" class= "com.oa.action.info.SomeJSON" autowire="byType"></bean>
+</beans>

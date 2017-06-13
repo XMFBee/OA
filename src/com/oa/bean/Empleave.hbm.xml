@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- 郭昶 -->
+<hibernate-mapping package="com.oa.bean">
+	<class name="Empleave" table="t_empleave">
+		<id name="leaveId" column="leaveid">
+			<generator class="uuid.hex"></generator>
+		</id>
+		<property name="startTime" column="starttime"></property>
+		<property name="endTime" column="endtime"></property>
+		<property name="leaveDay" column="leaveday"></property>
+		<property name="des" column="des"></property>
+		<property name="status" column="status"></property>
+		<property name="firstLevel" column="firstlevel"></property>
+		<property name="secondLevel" column="secondlevel"></property>
+		<property name="pass" column="pass"></property>
+		<many-to-one name="employee" column = "empid" class="Employee" />
+		
+	</class>
+</hibernate-mapping>

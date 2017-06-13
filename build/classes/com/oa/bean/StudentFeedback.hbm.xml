@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 赖泰君 -->
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.oa.bean">
+    <class name="StudentFeedback" table="t_stufeedback">
+        <id name="feedbackId" column="feedbackid">
+            <generator class="uuid"></generator>
+        </id>
+        <property name="feedbackDay" column="feedbackday"></property>
+        <property name="des" column="des"></property>
+        <property name="status" column="status"></property>
+        <property name="stuId" column="stuid"></property>
+        
+        <many-to-one column = "stuid" name = "stu" class = "com.oa.bean.Student" fetch = "join" insert="false" update="false"></many-to-one>
+        
+    </class>
+</hibernate-mapping>
